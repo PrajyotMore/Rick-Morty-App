@@ -2,7 +2,7 @@ export default function Pagination({ currentPage, pageInfo, onPageChange }) {
     const totalPages = pageInfo.pages || 1; // Total number of pages available from the API
     const pageNumbers = [];
   
-    // Calculate page numbers to display (e.g., 1 2 3 4)
+    // Calculate page numbers
     const maxPageToShow = 4;
     const startPage = Math.max(1, currentPage - Math.floor(maxPageToShow / 2));
     const endPage = Math.min(totalPages, startPage + maxPageToShow - 1);

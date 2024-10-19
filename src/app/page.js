@@ -1,14 +1,17 @@
-"use client"
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
+"use client";
+import { useState, useEffect } from "react";
+import Image from "next/image";
 
-
-import EpisodesList from './components/EpisodesList';
-import CharacterGrid from './components/ CharacterGrid';
-import { fetchCharacters, fetchCharactersByEpisode, fetchEpisodes } from './services/rickAndMortyApi';
-import Pagination from './components/Pagination';
-import Footer from './components/Footer';
-import Header from './components/Header';
+import EpisodesList from "./components/EpisodesList";
+import CharacterGrid from "./components/CharacterGrid";
+import {
+  fetchCharacters,
+  fetchCharactersByEpisode,
+  fetchEpisodes,
+} from "./services/rickAndMortyApi";
+import Pagination from "./components/Pagination";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 export default function Home() {
   const [episodes, setEpisodes] = useState([]);
@@ -46,26 +49,26 @@ export default function Home() {
   };
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-8 row-start-2 items-center">
-      <Header/>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <EpisodesList 
-            episodes={episodes} 
-            onEpisodeClick={handleEpisodeClick} 
-            selectedEpisode={selectedEpisode} 
+    <div className="min-h-screen">
+      <Header />
+      <main className="flex flex-col gap-8 row-start-2 items-center p-5 w-full">
+        <div className="w-full flex flex-col sm:flex-row gap-4">
+          <EpisodesList
+            episodes={episodes}
+            onEpisodeClick={handleEpisodeClick}
+            selectedEpisode={selectedEpisode}
             onClearSelection={handleClearSelection}
           />
           <CharacterGrid characters={characters} />
         </div>
-          <Pagination 
-            currentPage={currentPage} 
-            pageInfo={pageInfo} 
-            onPageChange={(newPage) => setCurrentPage(newPage)} 
-          />
-       
-         <Footer/>
+        <Pagination
+          currentPage={currentPage}
+          pageInfo={pageInfo}
+          onPageChange={(newPage) => setCurrentPage(newPage)}
+        />
       </main>
+
+      <Footer />
     </div>
   );
 }
