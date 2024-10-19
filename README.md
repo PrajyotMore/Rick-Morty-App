@@ -1,10 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
+1.Clone the repository
 
-First, run the development server:
+git clone https://github.com/your-username/rick-and-morty-app.git
 
-```bash
+2.Navigate to the project directory
+
+cd rick-and-morty-app
+
+3.Install the dependencies
+
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+
+
+4.Running the Development Server
+
 npm run dev
 # or
 yarn dev
@@ -12,25 +28,20 @@ yarn dev
 pnpm dev
 # or
 bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Link will generate 
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Project Structure
 
-## Learn More
+/app: Contains the main pages and components of the app.
+/components: Contains reusable UI components like CharacterCard, EpisodesList, and CharacterGrid.
+/services: Contains API calls for fetching characters and episodes from the Rick and Morty API.
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Responsive Design: Adjusts layout for mobile, tablet, and desktop screens.
+API Integration: Fetches data from the Rick and Morty API.
+Pagination: Allows users to navigate through multiple pages of characters.
+Episode Filtering: Users can select episodes to view characters appearing in them.
